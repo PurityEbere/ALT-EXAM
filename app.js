@@ -6,7 +6,7 @@ const PORT = 5500;
 
 // Route to serve the HTML file
 app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, '..', 'static-website', 'index.html');
+  const filePath = path.join(__dirname, 'index.html');
   res.sendFile(filePath);
 });
 
