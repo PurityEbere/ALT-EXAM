@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Purity Udeh - DevOps Engineer</title>
     <style>
+        /* ===== RESET & BASE STYLES ===== */
         * {
             margin: 0;
             padding: 0;
@@ -17,9 +18,10 @@
             color: #ffffff;
             overflow-x: hidden;
             cursor: none;
+            line-height: 1.6;
         }
 
-        /* Custom Cursor */
+        /* ===== CUSTOM CURSOR ===== */
         .cursor {
             width: 20px;
             height: 20px;
@@ -43,7 +45,7 @@
             transition: all 0.3s ease;
         }
 
-        /* Matrix Background Effect */
+        /* ===== MATRIX BACKGROUND ===== */
         .matrix-bg {
             position: fixed;
             top: 0;
@@ -54,7 +56,7 @@
             opacity: 0.1;
         }
 
-        /* Navigation */
+        /* ===== NAVIGATION ===== */
         nav {
             position: fixed;
             top: 0;
@@ -95,6 +97,7 @@
             position: relative;
             padding: 0.5rem 1rem;
             border: 1px solid transparent;
+            border-radius: 4px;
         }
 
         .nav-links a:hover {
@@ -104,7 +107,6 @@
             transform: translateY(-2px);
         }
 
-        /* Terminal Toggle */
         .terminal-toggle {
             background: #1a1a1a;
             color: #00ff88;
@@ -113,6 +115,7 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s ease;
+            font-family: inherit;
         }
 
         .terminal-toggle:hover {
@@ -121,15 +124,31 @@
             box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
         }
 
-        /* Hero Section */
+        /* ===== SECTION LAYOUTS ===== */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #00ff88;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            background: radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 123, 255, 0.1) 0%, transparent 50%);
         }
 
         .hero-content {
@@ -177,6 +196,7 @@
             animation: fadeInUp 1s ease-out 1.5s forwards;
         }
 
+        /* ===== BUTTONS ===== */
         .btn {
             padding: 1rem 2rem;
             border: 2px solid #00ff88;
@@ -187,6 +207,8 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            font-family: inherit;
+            font-size: 1rem;
         }
 
         .btn::before {
@@ -218,9 +240,408 @@
 
         .btn-secondary:hover {
             background: #007bff;
+            color: #ffffff;
         }
 
-        /* Floating Terminal */
+        /* ===== SKILLS SECTION ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .skill-card {
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transition: all 0.8s;
+        }
+
+        .skill-card:hover::before {
+            left: 100%;
+        }
+
+        .skill-card:hover {
+            border-color: #00ff88;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #00ff88;
+            display: block;
+        }
+
+        .skill-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        .skill-description {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* ===== PROJECT IDEA SECTION ===== */
+        .project-idea-section {
+            background: rgba(10, 10, 10, 0.95);
+            padding: 5rem 2rem;
+        }
+
+        .project-idea-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .project-idea-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .project-idea-card:hover {
+            border-color: #00ff88;
+            box-shadow: 0 30px 80px rgba(0, 255, 136, 0.1);
+        }
+
+        .project-idea-title {
+            font-size: 2rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .project-idea-description {
+            color: #cccccc;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .project-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-section h4 {
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            color: #999999;
+        }
+
+        .feature-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '▸';
+            color: #00ff88;
+            position: absolute;
+            left: 0;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .tech-tag {
+            background: #ffffff;
+            color: #0a0a0a;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .tech-tag:hover {
+            background: #00ff88;
+            transform: translateY(-2px);
+        }
+
+        /* ===== PROJECTS SECTION ===== */
+        .projects-section {
+            background: rgba(5, 5, 5, 0.95);
+            padding: 5rem 2rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+            border-color: #00ff88;
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
+        }
+
+        .project-header {
+            padding: 1.5rem;
+            background: #2a2a2a;
+            border-bottom: 1px solid #00ff88;
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .project-tech-tag {
+            background: rgba(0, 255, 136, 0.2);
+            color: #00ff88;
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-description {
+            color: #cccccc;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            color: #00ff88;
+            text-decoration: none;
+            border: 1px solid #00ff88;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            background: #00ff88;
+            color: #0a0a0a;
+        }
+
+        /* ===== VIDEO SECTION ===== */
+        .video-section {
+            padding: 5rem 2rem;
+            background: rgba(5, 5, 5, 0.95);
+        }
+
+        .video-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-intro {
+            margin-bottom: 3rem;
+        }
+
+        .video-intro h2 {
+            font-size: 3rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+        }
+
+        .video-intro p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .video-wrapper {
+            background: #1a1a1a;
+            border: 2px solid #00ff88;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .video-wrapper:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 255, 136, 0.3);
+            border-color: #4ecdc4;
+        }
+
+        .video-player {
+            width: 100%;
+            height: 500px;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .video-element {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-controls {
+            background: #2a2a2a;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #00ff88;
+        }
+
+        .video-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .video-title {
+            color: #00ff88;
+            font-weight: bold;
+        }
+
+        .video-duration {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .video-btn {
+            background: transparent;
+            border: 1px solid #00ff88;
+            color: #00ff88;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            font-family: inherit;
+        }
+
+        .video-btn:hover {
+            background: #00ff88;
+            color: #0a0a0a;
+        }
+
+        .video-btn.primary {
+            background: #00ff88;
+            color: #0a0a0a;
+        }
+
+        .video-btn.primary:hover {
+            background: #4ecdc4;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact-section {
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-item {
+            padding: 2rem;
+            background: rgba(26, 26, 26, 0.8);
+            border: 1px solid #333;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-color: #00ff88;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .contact-link {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #00ff88;
+        }
+
+        /* ===== FLOATING TERMINAL ===== */
         .floating-terminal {
             position: fixed;
             bottom: -300px;
@@ -287,326 +708,7 @@
             margin-left: 1rem;
         }
 
-        /* Skills Grid */
-        .skills-section {
-            padding: 5rem 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #00ff88;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .skill-card {
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid #333;
-            border-radius: 8px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
-            transition: all 0.8s;
-        }
-
-        .skill-card:hover::before {
-            left: 100%;
-        }
-
-        .skill-card:hover {
-            border-color: #00ff88;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .skill-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #00ff88;
-        }
-
-        .skill-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .skill-description {
-            color: #cccccc;
-            line-height: 1.6;
-        }
-
-        /* Projects Section */
-        .projects-section {
-            background: rgba(10, 10, 10, 0.9);
-            padding: 5rem 2rem;
-        }
-
-        .projects-container {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: scale(1.02);
-            border-color: #00ff88;
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.1);
-        }
-
-        .project-header {
-            padding: 1.5rem;
-            background: #2a2a2a;
-            border-bottom: 1px solid #00ff88;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            color: #00ff88;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            background: rgba(0, 255, 136, 0.2);
-            color: #00ff88;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-size: 0.8rem;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-description {
-            color: #cccccc;
-            line-height: 1.6;
-            margin-bottom: 1rem;
-        }
-
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .project-link {
-            color: #00ff88;
-            text-decoration: none;
-            border: 1px solid #00ff88;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            background: #00ff88;
-            color: #0a0a0a;
-        }
-
-        /* Video Pitch Section */
-        .video-section {
-            padding: 5rem 2rem;
-            background: rgba(5, 5, 5, 0.95);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .video-intro {
-            margin-bottom: 3rem;
-        }
-
-        .video-intro h2 {
-            font-size: 3rem;
-            color: #00ff88;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
-
-        .video-intro p {
-            font-size: 1.2rem;
-            color: #cccccc;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
-        .video-wrapper {
-            position: relative;
-            background: #1a1a1a;
-            border: 2px solid #00ff88;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .video-wrapper:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 80px rgba(0, 255, 136, 0.3);
-            border-color: #4ecdc4;
-        }
-
-        .video-player {
-            width: 100%;
-            height: 500px;
-            background: #000;
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .video-element {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .video-controls {
-            background: #2a2a2a;
-            padding: 1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-top: 1px solid #00ff88;
-        }
-
-        .video-info {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .video-title {
-            color: #00ff88;
-            font-weight: bold;
-        }
-
-        .video-duration {
-            color: #999;
-            font-size: 0.9rem;
-        }
-
-        .video-actions {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .video-btn {
-            background: transparent;
-            border: 1px solid #00ff88;
-            color: #00ff88;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.9rem;
-        }
-
-        .video-btn:hover {
-            background: #00ff88;
-            color: #0a0a0a;
-        }
-
-        .video-btn.primary {
-            background: #00ff88;
-            color: #0a0a0a;
-        }
-
-        .video-btn.primary:hover {
-            background: #4ecdc4;
-        }
-
-        /* Contact Section */
-        .contact-section {
-            padding: 5rem 2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .contact-item {
-            padding: 2rem;
-            background: rgba(26, 26, 26, 0.8);
-            border: 1px solid #333;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            border-color: #00ff88;
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 2rem;
-            color: #00ff88;
-            margin-bottom: 1rem;
-        }
-
-        .contact-link {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        .contact-link:hover {
-            color: #00ff88;
-        }
-
-        /* Animations */
+        /* ===== ANIMATIONS ===== */
         @keyframes glitchIn {
             0% { opacity: 0; transform: scale(0.8) rotateX(10deg); }
             50% { opacity: 0.8; transform: scale(1.1) rotateX(-5deg); }
@@ -634,7 +736,7 @@
             to { opacity: 1; transform: translateX(0); }
         }
 
-        /* Responsive */
+        /* ===== RESPONSIVE DESIGN ===== */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -658,6 +760,36 @@
                 flex-direction: column;
                 align-items: center;
             }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .project-features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .video-player {
+                height: 300px;
+            }
+
+            .tech-stack {
+                justify-content: center;
+            }
         }
     </style>
 </head>
@@ -676,6 +808,7 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#skills">Skills</a></li>
+                <li><a href="#idea">Project Idea</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#pitch">Video Pitch</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -702,8 +835,51 @@
         </div>
     </section>
 
+    <!-- Project Idea Section -->
+    <section class="project-idea-section" id="idea">
+        <div class="project-idea-container">
+            <h2 class="section-title">Project Idea</h2>
+            <div class="project-idea-card">
+                <h3 class="project-idea-title">ProductCore</h3>
+                <p class="project-idea-description">
+                    ProductCore is an AI-powered tool that helps founders and product teams manage the process, people, and technology behind building great products. It simplifies decision-making using curated tool recommendations, task automation, and intelligent insights across the product lifecycle.
+                </p>
+                
+                <div class="project-features-grid">
+                    <div class="feature-section">
+                        <h4>How it Works</h4>
+                        <ul class="feature-list">
+                            <li><strong>Idea Input:</strong> Users describe their product or problem area.</li>
+                            <li><strong>AI Recommendations:</strong> Suggests tools, tech stack, and workflows.</li>
+                            <li><strong>Team Mapping:</strong> Identifies key roles and needed skills.</li>
+                            <li><strong>Smart Roadmap:</strong> Generates phased plans with prioritization.</li>
+                        </ul>
+                    </div>
+                    <div class="feature-section">
+                        <h4>Key Benefits</h4>
+                        <ul class="feature-list">
+                            <li>⚡ 50% faster planning cycle</li>
+                            <li>🧠 AI-powered tool matching</li>
+                            <li>🔒 Secure & collaborative workspace</li>
+                            <li>📊 Clearer alignment across teams</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tech-stack">
+                    <span class="tech-tag">Next.js</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">TypeScript</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">TailwindCSS</span>
+                    <span class="tech-tag">OpenAI</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Skills Section -->
-    <section class="skills-section" id="skills">
+    <section class="section" id="skills">
         <h2 class="section-title">Tech Arsenal</h2>
         <div class="skills-grid">
             <div class="skill-card">
@@ -759,19 +935,20 @@
 
     <!-- Projects Section -->
     <section class="projects-section" id="projects">
-        <div class="projects-container">
+        <div class="section">
             <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-header">
                         <h3 class="project-title">Kubernetes Multi-Cluster Management</h3>
                         <div class="project-tech">
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Terraform</span>
-                            <span class="tech-tag">AWS</span>
-                            <span class="tech-tag">Prometheus</span>
+                            <span class="project-tech-tag">Kubernetes</span>
+                            <span class="project-tech-tag">Terraform</span>
+                            <span class="project-tech-tag">AWS</span>
+                            <span class="project-tech-tag">Prometheus</span>
                         </div>
                     </div>
+            
                     <div class="project-content">
                         <p class="project-description">
                             Designed and implemented a multi-cluster Kubernetes platform supporting 
@@ -836,7 +1013,7 @@
     <section class="video-section" id="pitch">
         <div class="video-container">
             <div class="video-intro">
-                <h2>My DevOps Journey</h2>
+                <h2>My Creative Moments</h2>
                 <p>
                     If i'm not doing DevOps or learning to code, Im probably somewhere being a poet, 
                     they are the things that keep me sane not be drown in the bugs.
@@ -858,7 +1035,7 @@
                 
                 <div class="video-controls">
                     <div class="video-info">
-                        <div class="video-title">Purity Udeh - Creative Moments</div>
+                        <div class="video-title">Poetic Video</div>
                         <div class="video-duration">3:45</div>
                     </div>
                     <div class="video-actions">
