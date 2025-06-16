@@ -26,6 +26,7 @@ alt-exam/
 * Create/download a `.pem` key pair
 * Allow ports 22 (SSH), 80 (HTTP), 443 (HTTPS)
 * Launch instance
+* App is live
 
 ---
 
