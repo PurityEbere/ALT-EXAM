@@ -1,7 +1,7 @@
 # Alt Exam Deployment Guide (Node.js + Nginx on AWS EC2)
 
 **Public IP:** `http://54.87.21.248`
-**Deployed Site:** Purityebere.osinachi.site
+**Deployed Site:** * Purityebere.osinachi.site
 
 ---
 
