@@ -4,7 +4,6 @@
 
 **Deployed Site:** [Purityebere.osinachi.site](http://Purityebere.osinachi.site)
 
-This is a step-by-step guide I followed to deploy my Node.js app and static landing page using Nginx on an AWS EC2 instance
 ---
 
 ## 📁 Project Structure
