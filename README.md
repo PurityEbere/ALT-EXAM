@@ -9,10 +9,10 @@
 
 ```
 alt-exam/
-├── static-website/
-│   └── index.html
-├── express-app/
-│   └── index.js
+├── index.html
+│
+├── app.js
+│
 └── .gitignore
 ```
 
